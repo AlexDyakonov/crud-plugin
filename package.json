@@ -9,15 +9,45 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "golang-crud-generator.helloWorld",
-        "title": "Hello World"
+        "command": "golang-crud-generator.connectToDatabase",
+        "title": "Connect to Database"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "GoLang CRUD Generator",
+      "properties": {
+        "golangCrudGenerator.host": {
+          "type": "string",
+          "default": "localhost",
+          "description": "Database host"
+        },
+        "golangCrudGenerator.port": {
+          "type": "string",
+          "default": "5432",
+          "description": "Database port"
+        },
+        "golangCrudGenerator.dbName": {
+          "type": "string",
+          "default": "",
+          "description": "Database name"
+        },
+        "golangCrudGenerator.user": {
+          "type": "string",
+          "default": "",
+          "description": "Database user"
+        },
+        "golangCrudGenerator.password": {
+          "type": "string",
+          "default": "",
+          "description": "Database password"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
