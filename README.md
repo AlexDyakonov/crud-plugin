@@ -1,71 +1,49 @@
-# golang-crud-generator README
+<div align="center">
+  <img src="https://raw.githubusercontent.com/AlexDyakonov/lab-5-7-8/refs/heads/master/src/main/resources/Picture1.png" alt="logo">
 
-This is the README for your extension "golang-crud-generator". After writing up a brief description, we recommend including the following sections.
+  ### ИС
 
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+  ## Лабораторная работа №3  
+  По дисциплине: «ИСР»
+</div>
 
 ---
 
-## Following extension guidelines
+**Преподаватель:** Повышев Владислав Вячеславович  
+**Выполнил:** Дьяконов Александр  
+**Группа:** M3214
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+---
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+# GoLang CRUD Generator
 
-## Working with Markdown
+Это расширение для VS Code, которое генерирует CRUD-код для GoLang на основе таблиц PostgreSQL. Оно упрощает процесс создания базового CRUD-функционала для выбранных таблиц базы данных.
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+## Основные функции
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+- Подключение к базе данных PostgreSQL
+- Выбор схемы и таблицы
+- Генерация методов `GetAll` и `Insert` для CRUD-функционала
+- Копирование сгенерированного кода в буфер обмена и сохранение в файл
 
-## For more information
+## Требования
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+- База данных PostgreSQL
+- Установленные Node.js и библиотека `pg`
 
-**Enjoy!**
+## Использование
+
+1. **Подключение к базе данных**  
+   Воспользуйтесь командой `Connect to Database`, чтобы открыть форму для настройки и проверки подключения к базе данных.
+
+2. **Выбор схемы и таблицы**  
+   После подключения используйте команду `Select Schema and Table` для выбора схемы и таблицы для генерации CRUD.
+
+3. **Генерация CRUD**  
+   Выполните команду `Generate CRUD`, чтобы сгенерировать код для выбранной таблицы. Код будет скопирован в буфер обмена и может быть сохранен в файл.
+
+## Команды
+
+- `Connect to Database`: Открывает форму для подключения к базе данных PostgreSQL.
+- `Select Schema and Table`: Позволяет выбрать схему и таблицу.
+- `Generate CRUD`: Генерирует CRUD-код и копирует его в буфер обмена и в файл.
