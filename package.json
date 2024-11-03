@@ -15,6 +15,14 @@
       {
         "command": "golang-crud-generator.connectToDatabase",
         "title": "Connect to Database"
+      },
+      {
+        "command": "golang-crud-generator.selectSchemaAndTable",
+        "title": "Select Schema and Table"
+      },
+      {
+        "command": "golang-crud-generator.generateCrud",
+        "title": "Generate CRUD"
       }
     ],
     "configuration": {

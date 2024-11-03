@@ -45,4 +45,34 @@ export class DatabaseConnectionHandler {
 
         panel.webview.postMessage({ command: 'loadConfig', data: dbConfig });
     }
+
+    static async selectSchemaAndTable(): Promise<{ schema: string, table: string } | null> {
+        try {
+            const schemas = await SQLConnection.getSchemas();
+            const selectedSchema = await vscode.window.showQuickPick(schemas, {
+                placeHolder: 'Выберите схему',
+            });
+
+            if (!selectedSchema) {
+                vscode.window.showWarningMessage('Выбор схемы отменен.');
+                return null;
+            }
+
+            const tables = await SQLConnection.getTables(selectedSchema);
+            const selectedTable = await vscode.window.showQuickPick(tables, {
+                placeHolder: 'Выберите таблицу',
+            });
+
+            if (!selectedTable) {
+                vscode.window.showWarningMessage('Выбор таблицы отменен.');
+                return null;
+            }
+
+            return { schema: selectedSchema, table: selectedTable };
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : String(error);
+            vscode.window.showErrorMessage(`Не удалось получить схемы или таблицы: ${errorMessage}`);
+            return null;
+        }
+    }
 }

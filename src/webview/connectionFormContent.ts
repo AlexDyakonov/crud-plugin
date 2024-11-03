@@ -84,7 +84,6 @@ export function getConnectionFormContent() {
             <script>
                 const vscode = acquireVsCodeApi();
 
-                // Автозаполнение формы на основе данных из хранилища
                 window.addEventListener('message', event => {
                     const message = event.data;
                     if (message.command === 'loadConfig') {
